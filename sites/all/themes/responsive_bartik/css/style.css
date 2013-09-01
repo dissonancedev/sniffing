@@ -1,4 +1,21 @@
 /* ------------------- Overall Specifications ------------- */
+#featured .sf-menu.sf-style-blue a:hover, 
+#featured .sf-menu.sf-style-blue a:active,
+#featured .sf-menu.sf-style-blue li {
+  background: #000;
+  color: #ea6f33;
+}
+#featured .sf-menu.sf-style-blue a {
+  border: 0;
+  text-decoration:none;
+}
+#block-superfish-2 .content #superfish-2 {
+  margin-bottom: 0;
+}
+
+#block-superfish-2 .content {
+  margin-top: 0;
+}
 
 div#site-logo img {
   width: 250px;
@@ -556,15 +573,11 @@ h1#site-name {
 
 #featured {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 0.7em;
   font-weight: normal;
-  line-height: 1.4;
-  padding: 20px 10px 45px;
+  line-height: 0.8;
   margin: 0;
-  background: #f0f0f0;
   background: rgba(30, 50, 10, 0.08);
-  border-bottom: 1px solid #e7e7e7;
-  text-shadow: 1px 1px #fff;
 }
 #featured h2 {
   font-size: 1.2em;
@@ -1771,7 +1784,7 @@ a#menu-toggle:after {
     border-bottom-right-radius: 0;
   }
   #featured {
-    font-size: 1.643em;
+    font-size: 1.1em;
     line-height: 1.4;
 
   }
