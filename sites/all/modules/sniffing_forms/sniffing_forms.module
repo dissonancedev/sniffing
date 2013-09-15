@@ -1,0 +1,99 @@
+<?php
+/**
+* @todo, Hide google maps element on edit. Assign location to google map address.
+*  
+*/
+
+function sniffing_forms_theme($existing, $type, $theme, $path){
+    return array(
+        'sniffing_course_node_form' => array(
+            'arguments' => array('form' => null),
+            'path' => drupal_get_path('theme', 'responsive_bartik').'/templates/forms',
+            'template' => 'sniffing_course--node-form', //name of your template file, it can be anything
+            'render element' => 'form'
+        )
+    );
+}
+/**
+ * This hook will add the default values for the content types on save.
+ * Implements hook_node_submit().
+ */
+function sniffing_forms_node_submit($node, $form, &$form_state){
+  $allowed_content_types = array(
+   'sniffing_course',
+   'sniffing_event',
+   'sniffing_musician_seeking_band',
+   'sniffing_rehearsal_studio',
+   'sniffing_seeking_musician',
+   'sniffing_venue',
+  );
+  if(in_array($node->type, $allowed_content_types)){
+    // Enable comments.
+  	$form_state['comment'] = 2;
+  	// Enable subscriptionon node.
+    $form_state['nodejs_subscribe']['nodejs_subscriptions_allowed'] = 1;
+    //Enable sharing of node.
+    $form_state['user_relationship_node_access']['view'] = 4;
+    $form_state['user_relationship_node_access']['update'] = 0;
+    $form_state['user_relationship_node_access']['delete'] = 0;
+    $form_state['user_relationship_node_access']['set_default'] = 'Make default'; 
+  }
+}
+
+function sniffing_forms_form_sniffing_course_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_sniffing_event_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_sniffing_venue_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_sniffing_seeking_musician_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_sniffing_rehearsal_studio_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_sniffing_musician_seeking_band_node_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+function sniffing_forms_form_alter(&$form, &$form_state, $form_id) {
+	$form['comment_settings']['#access'] = FALSE;
+	$form['menu']['#access'] = FALSE;
+	$form['path']['#access'] = FALSE;
+	$form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['additional_settings']['#access'] = FALSE;
+}
+?>
