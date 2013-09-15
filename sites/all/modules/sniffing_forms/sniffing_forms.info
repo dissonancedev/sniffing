@@ -1,0 +1,4 @@
+name = Sniffing forms
+description = Module handling forms.
+core = 7.x
+files[] = sniffing_forms.module
