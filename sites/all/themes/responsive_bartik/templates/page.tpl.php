@@ -142,7 +142,6 @@
 
   <div id="main-wrapper" class="clearfix"><div id="main" role="main" class="clearfix">
 
-    <?php print $breadcrumb; ?>
 
     <div id="content" class="column"><div class="section">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
